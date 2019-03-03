@@ -1,13 +1,13 @@
 const EVENTS = [
-  "click",
-  "keypress",
-  "keydown",
-  "load",
-  "mousemove",
-  "scroll",
-  "touchmove",
-  "touchstart"
-];
+  'click',
+  'keypress',
+  'keydown',
+  'load',
+  'mousemove',
+  'scroll',
+  'touchmove',
+  'touchstart',
+]
 
 /**
  * @class UserIdleTracker
@@ -18,41 +18,41 @@ const EVENTS = [
  */
 export default class UserIdleTracker {
   constructor(callback, idleTime) {
-    this.callback = callback;
-    this.idleTime = idleTime;
-    this.isActive = true;
+    this.callback = callback
+    this.idleTime = idleTime
+    this.isActive = true
 
-    this.createListeners();
-    this.init();
+    this.createListeners()
+    this.init()
   }
 
   init = () => {
-    this.isActive = true;
-    clearTimeout(this.timer);
-    this.timer = window.setTimeout(this.onIdle, this.idleTime);
-  };
+    this.isActive = true
+    clearTimeout(this.timer)
+    this.timer = window.setTimeout(this.onIdle, this.idleTime)
+  }
 
-  destroy() {
-    clearTimeout(this.timer);
-    this.removeListeners();
+  destroy = () => {
+    clearTimeout(this.timer)
+    this.removeListeners()
   }
 
   onIdle = () => {
-    if (!this.isActive) return;
-    this.isActive = false;
-    this.callback();
-    this.destroy();
-  };
+    if (!this.isActive) return
+    this.isActive = false
+    this.callback()
+    this.destroy()
+  }
 
   createListeners = () => {
     EVENTS.forEach(eventName => {
-      document.addEventListener(eventName, this.init, false);
-    });
-  };
+      document.addEventListener(eventName, this.init, false)
+    })
+  }
 
   removeListeners = () => {
     EVENTS.forEach(eventName => {
-      document.removeEventListener(eventName, this.init, false);
-    });
-  };
+      document.removeEventListener(eventName, this.init, false)
+    })
+  }
 }
