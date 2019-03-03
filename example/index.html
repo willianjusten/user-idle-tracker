@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Idle Tracker Example</title>
+  </head>
+  <body>
+    <h1>Don't do anything for the next 5s to see.</h1>
+
+    <script src="user-idle-tracker.min.js"></script>
+    <script>
+      function stillThere() {
+        alert("Heeeey! Are you still there?");
+      }
+
+      const tracker = new UserIdleTracker(stillThere, 5000);
+    </script>
+  </body>
+</html>

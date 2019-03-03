@@ -1,0 +1,31 @@
+{
+  "name": "user-idle-tracker",
+  "version": "1.0.1",
+  "description": "A library to check the status of the user and to run a callback when its considered Idle.",
+  "main": "lib/user-idle-tracker.min.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "jest",
+    "start": "webpack-dev-server"
+  },
+  "keywords": [
+    "idle",
+    "inactivity",
+    "idle tracker",
+    "idle user"
+  ],
+  "author": "Willian Justen de Vasconcellos",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "^8.0.5",
+    "jest": "^24.1.0",
+    "prettier": "1.16.4",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
